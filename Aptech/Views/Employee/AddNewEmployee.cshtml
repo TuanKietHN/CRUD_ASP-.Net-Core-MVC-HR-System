@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Add New Employee";
+    Layout = "_Layout";
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" class="w-50 mx-auto">
+    <div class="mb-3">
+        <label for="EmpAge" class="form-label">Age</label>
+        <input type="number" class="form-control" id="EmpAge" name="EmpAge" required>
+        @if (ViewData.ModelState["EmpAge"]?.Errors.Count > 0)
+        {
+            <div class="text-danger">
+                @ViewData.ModelState["EmpAge"]?.Errors[0]?.ErrorMessage
+            </div>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label for="EmpName" class="form-label">Fullname</label>
+        <input type="text" class="form-control" id="EmpName" name="EmpName" required>
+        @if (ViewData.ModelState["EmpName"]?.Errors.Count > 0)
+        {
+            <div class="text-danger">
+                @ViewData.ModelState["EmpName"]?.Errors[0]?.ErrorMessage
+            </div>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label for="EmpAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="EmpAddress" name="EmpAddress" required>
+        @if (ViewData.ModelState["EmpAddress"]?.Errors.Count > 0)
+        {
+            <div class="text-danger">
+                @ViewData.ModelState["EmpAddress"]?.Errors[0]?.ErrorMessage
+            </div>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label for="EmpEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="EmpEmail" name="EmpEmail" required>
+        @if (ViewData.ModelState["EmpEmail"]?.Errors.Count > 0)
+        {
+            <div class="text-danger">
+                @ViewData.ModelState["EmpEmail"]?.Errors[0]?.ErrorMessage
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Employee</button>
+</form>

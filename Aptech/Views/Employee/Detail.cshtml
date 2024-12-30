@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Add New Employee";
+    Layout = "_Layout";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="list-group">
+    <p class="list-group-item">EmpID: @Model.EmpId</p>
+    <p class="list-group-item">Fullname: @Model.EmpName</p>
+    <p class="list-group-item">Address: @Model.EmpAddress</p>
+    <p class="list-group-item">Email: @Model.EmpEmail</p>
+    <p class="list-group-item">Age: @Model.EmpAge</p>
+</div>
+
+<a href="@Url.Action("Index", "Employee")" class="btn btn-dark mt-3">Back to List</a>
